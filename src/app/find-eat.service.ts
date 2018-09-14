@@ -8,8 +8,8 @@ import { HttpErrorHandler, HandleError } from './http-error-handler.service';
   providedIn: 'root'
 })
 export class FindEatService {
-  private Host: string = 'http://localhost:8080/';
-  private Url: string = 'food/keyword';
+  private Host = 'http://localhost:8080/';
+  private Url = 'food/keyword';
   private handleError: HandleError;
 
   constructor(
