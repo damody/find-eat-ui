@@ -1,0 +1,13 @@
+.search-food-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+  
+.search-food-full-width {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}

@@ -9,7 +9,6 @@ import { HttpErrorHandler, HandleError } from './http-error-handler.service';
 })
 export class FindEatService {
   private Host = 'http://localhost:8080/';
-  private Url = 'food/keyword';
   private handleError: HandleError;
 
   constructor(
@@ -18,17 +17,30 @@ export class FindEatService {
     this.handleError = httpErrorHandler.createHandleError('HeroesService');
   }
 
-  public getFoods(keyword: string): Observable<string[]> {
-    const url = this.Host + this.Url;
+  public getFoods(keyword: string, fuzzy: boolean): Observable<string[]> {
+    const url = this.Host + 'food/keyword';
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json'
       })
     };
     console.log(url, keyword);
-    return this.http.post<string[]>(this.Host + this.Url, {food_name: keyword}, httpOptions)
+    return this.http.post<string[]>(url , {food_name: keyword, fuzzy: fuzzy}, httpOptions)
       .pipe(
         catchError(this.handleError('getFoods', []))
+      );
+  }
+  public getRestaurants(keyword: string, fuzzy: boolean): Observable<string[]> {
+    const url = this.Host + 'restaurant/keyword';
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    console.log(url, keyword);
+    return this.http.post<string[]>(url , {food_name: keyword, fuzzy: fuzzy}, httpOptions)
+      .pipe(
+        catchError(this.handleError('getRestaurants', []))
       );
   }
 
