@@ -38,7 +38,7 @@ export class FindEatService {
       })
     };
     console.log(url, keyword);
-    return this.http.post<string[]>(url , {food_name: keyword, fuzzy: fuzzy}, httpOptions)
+    return this.http.post<string[]>(url , {name: keyword, fuzzy: fuzzy}, httpOptions)
       .pipe(
         catchError(this.handleError('getRestaurants', []))
       );
