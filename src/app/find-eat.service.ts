@@ -8,7 +8,7 @@ import { HttpErrorHandler, HandleError } from './http-error-handler.service';
   providedIn: 'root'
 })
 export class FindEatService {
-  private Host = 'http://mmo-rts.com:8080/';
+  private Host = 'https://www.find-eat-price.com:8080/';
   private handleError: HandleError;
 
   constructor(
