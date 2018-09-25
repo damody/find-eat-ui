@@ -17,16 +17,35 @@ import { MatToolbarModule,
   MatCardModule,
   MatInputModule,
   MatCheckboxModule } from '@angular/material';
+import { RouterModule, Routes } from '@angular/router';
+import {MatMenuModule} from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 import { SearchFoodComponent } from './search-food/search-food.component';
 import { SearchRestaurantComponent } from './search-restaurant/search-restaurant.component';
+import { NewFoodComponent } from './new-food/new-food.component';
+import { NewRestaurantComponent } from './new-restaurant/new-restaurant.component';
+import { PageMenuComponent } from './page-menu/page-menu.component';
+import { MainComponent } from './main/main.component';
+
 registerLocaleData(zh);
+
+const routes: Routes = [
+  { path: '', component: MainComponent },
+  { path: 'search-food', component: SearchFoodComponent },
+  { path: 'search-restaurant', component: SearchRestaurantComponent },
+  { path: 'new-food', component: NewFoodComponent },
+  { path: 'new-restaurant', component: NewRestaurantComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFoodComponent,
-    SearchRestaurantComponent
+    SearchRestaurantComponent,
+    PageMenuComponent,
+    MainComponent,
+    NewFoodComponent,
+    NewRestaurantComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +63,8 @@ registerLocaleData(zh);
     ReactiveFormsModule,
     MatSlideToggleModule,
     MatInputModule,
+    MatMenuModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [
     HttpErrorHandler,
