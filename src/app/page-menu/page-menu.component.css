@@ -1,7 +1,6 @@
 .page-menu-width {
-    min-width: 150px;
-    max-width: 600px;
     width: 100%;
+    min-width: 250px;
+    max-width: 800px;
     background: bisque;
-    color: #000000;
 }

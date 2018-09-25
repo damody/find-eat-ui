@@ -27,6 +27,7 @@ import { NewRestaurantComponent } from './new-restaurant/new-restaurant.componen
 import { PageMenuComponent } from './page-menu/page-menu.component';
 import { MainComponent } from './main/main.component';
 
+
 registerLocaleData(zh);
 
 const routes: Routes = [

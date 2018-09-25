@@ -1,4 +1,5 @@
-<form class="search-food-form">
+<div class="search-food-form">
+<form>
   <mat-form-field class="search-food-full-width">
     <input matInput placeholder="找食物" aria-label="State" (input)="keyinput($event)" [matAutocomplete]="auto" [formControl]="stateCtrl">
     <mat-autocomplete #auto="matAutocomplete">
@@ -9,3 +10,4 @@
   </mat-form-field>
 </form>
 <mat-checkbox [(ngModel)]="checked">模糊搜尋</mat-checkbox>
+</div>

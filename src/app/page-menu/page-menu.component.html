@@ -1,7 +1,8 @@
+
 <button class="page-menu-width" mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item [routerLink]="[ '/search-food' ]">找食物</button>
   <button mat-menu-item [routerLink]="[ '/search-restaurant' ]">找餐廳</button>
-  <button mat-menu-item [routerLink]="[ '/new-restaurant' ]">新增餐廳</button>
   <button mat-menu-item [routerLink]="[ '/new-food' ]">新增食物</button>
+  <button mat-menu-item [routerLink]="[ '/new-restaurant' ]">新增餐廳</button>
 </mat-menu>

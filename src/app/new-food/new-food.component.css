@@ -1,0 +1,22 @@
+.food-container {
+    width: 100%;
+    min-width: 250px;
+    max-width: 800px;
+    margin: auto;
+    text-align:center;
+}
+
+.food {
+    width: 100%;
+    text-align:center;
+}
+
+.fbtn {
+    background: rgb(157, 205, 233);
+}
+
+.title {
+    width: 50%;
+    text-align:center;
+    margin: auto;
+}

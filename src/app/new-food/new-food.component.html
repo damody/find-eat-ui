@@ -1,3 +1,11 @@
-<p>
-  new-food works!
-</p>
+<div class="food-container">
+  <div><label>目標餐廳</label></div>
+  <mat-card class="title">{{ dest_restaurant }}</mat-card>
+  <mat-form-field class="food">
+    <input matInput placeholder="食物名稱" [(ngModel)]="name">
+  </mat-form-field>
+  <mat-form-field class="food">
+    <input matInput placeholder="價格" [(ngModel)]="price">
+  </mat-form-field>
+  <button class="fbtn" mat-button (click)="OnClick()">新增食物</button>
+</div>

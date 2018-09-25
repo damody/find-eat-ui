@@ -17,7 +17,18 @@ export class FindEatService {
     httpErrorHandler: HttpErrorHandler) {
     this.handleError = httpErrorHandler.createHandleError('HeroesService');
   }
-
+  public newFood(name: string, price: number): Observable<string[]> {
+    const url = this.Host + 'food';
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.http.post<string[]>(url , {menu_id: 1, food_name: name, price: Number(price)}, httpOptions)
+      .pipe(
+        catchError(this.handleError('newFood', []))
+      );
+  }
   public getFoods(keyword: string, fuzzy: boolean): Observable<string[]> {
     const url = this.Host + 'food/keyword';
     const httpOptions = {
