@@ -68,5 +68,17 @@ export class FindEatService {
         catchError(this.handleError('getRestaurants', []))
       );
   }
-
+  public searchRestaurants(keyword: string, fuzzy: boolean): Observable<string[]> {
+    const url = this.Host + 'restaurant/search';
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    console.log(url, keyword);
+    return this.http.post<string[]>(url , {name: keyword, fuzzy: fuzzy}, httpOptions)
+      .pipe(
+        catchError(this.handleError('searchRestaurants', []))
+      );
+  }
 }

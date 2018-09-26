@@ -10,3 +10,10 @@
     text-align: center;
     margin: auto;
 }
+
+.go-search {
+    width: 100%;
+    min-width: 250px;
+    max-width: 800px;
+    background: #fffecd;
+}

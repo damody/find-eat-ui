@@ -17,6 +17,7 @@ export class SearchRestaurantComponent implements OnInit {
   checked = false;
   stateCtrl = new FormControl();
   filteredStates: Observable<State[]>;
+  restaurant = "";
   lng = 0;
   lat = 0;
   states: State[] = [
@@ -53,6 +54,21 @@ export class SearchRestaurantComponent implements OnInit {
     console.log(event.target.value);
     if (event.target.value.length > 0) {
       this.findeatService.getRestaurants(event.target.value, this.checked)
+        .subscribe(data => {
+          console.log(data);
+          this.states = [];
+          data.forEach(element => {
+            this.states.push({name: element});
+          });
+          this.stateCtrl.updateValueAndValidity();
+        });
+    } else {
+      this.states = [];
+      this.stateCtrl.updateValueAndValidity();
+    }
+  }
+  OnClick() {
+    this.findeatService.searchRestaurants(this.restaurant, this.checked)
       .subscribe(data => {
         console.log(data);
         this.states = [];
@@ -61,9 +77,5 @@ export class SearchRestaurantComponent implements OnInit {
         });
         this.stateCtrl.updateValueAndValidity();
       });
-    } else {
-      this.states = [];
-      this.stateCtrl.updateValueAndValidity();
-    }
   }
 }
