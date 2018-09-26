@@ -11,7 +11,6 @@ export class FindEatService {
   private Host = 'http://localhost:8080/';
   //private Host = 'https://www.find-eat-price.com/api/';
   private handleError: HandleError;
-
   constructor(
     private http: HttpClient,
     httpErrorHandler: HttpErrorHandler) {
@@ -27,6 +26,20 @@ export class FindEatService {
     return this.http.post<string[]>(url , {menu_id: 1, food_name: name, price: Number(price)}, httpOptions)
       .pipe(
         catchError(this.handleError('newFood', []))
+      );
+  }
+  public newRestaurant(author_email: string, lng: number, lat: number, name: string, phone: string, email: string,
+      open_time: string, close_time: string, delivery: string): Observable<string[]> {
+    const url = this.Host + 'restaurant';
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.http.post<string[]>(url , {author_email: author_email, lng: Number(lng), lat: Number(lat), name: name,
+      phone: phone, email: email, open_time: open_time, close_time: close_time, delivery: delivery}, httpOptions)
+      .pipe(
+        catchError(this.handleError('newRestaurant', []))
       );
   }
   public getFoods(keyword: string, fuzzy: boolean): Observable<string[]> {

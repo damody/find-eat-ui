@@ -1,3 +1,27 @@
-<p>
-  new-restaurant works!
-</p>
+<div class="restaurant-container">
+  <mat-form-field class="restaurant">
+    <input matInput placeholder="餐廳名稱" [(ngModel)]="name">
+  </mat-form-field>
+  <mat-form-field class="restaurant">
+    <input matInput placeholder="經度 longitude" [(ngModel)]="lng">
+  </mat-form-field>
+  <mat-form-field class="restaurant">
+    <input matInput placeholder="緯度 latitude" [(ngModel)]="lat">
+  </mat-form-field>
+  <mat-form-field class="restaurant">
+    <input matInput placeholder="開店時間" [(ngModel)]="open_time">
+  </mat-form-field>
+  <mat-form-field class="restaurant">
+    <input matInput placeholder="關店時間" [(ngModel)]="close_time">
+  </mat-form-field>
+  <mat-form-field class="restaurant">
+    <input matInput placeholder="外送規則" [(ngModel)]="delivery">
+  </mat-form-field>
+  <mat-form-field class="restaurant">
+    <input matInput placeholder="電話" [(ngModel)]="phone">
+  </mat-form-field>
+  <mat-form-field class="restaurant">
+    <input matInput placeholder="Email" [(ngModel)]="email">
+  </mat-form-field>
+  <button class="fbtn" mat-button (click)="OnClick()">新增餐廳</button>
+</div>

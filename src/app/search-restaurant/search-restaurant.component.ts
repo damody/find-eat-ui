@@ -17,8 +17,8 @@ export class SearchRestaurantComponent implements OnInit {
   checked = false;
   stateCtrl = new FormControl();
   filteredStates: Observable<State[]>;
-  lat = 0;
   lng = 0;
+  lat = 0;
   states: State[] = [
     /*{name: "豪享來""},
     {name: "伍富牛肉麵"},
@@ -40,8 +40,8 @@ export class SearchRestaurantComponent implements OnInit {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         console.log(position);
-        this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
+        this.lat = position.coords.latitude;
       });
     }
   }
