@@ -17,6 +17,7 @@ import { MatToolbarModule,
   MatCardModule,
   MatInputModule,
   MatCheckboxModule } from '@angular/material';
+import {MatSortModule} from '@angular/material/sort';
 import { RouterModule, Routes } from '@angular/router';
 import {MatMenuModule} from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -70,6 +71,7 @@ const routes: Routes = [
     MatInputModule,
     MatMenuModule,
     RouterModule.forRoot(routes),
+    MatSortModule,
   ],
   providers: [
     HttpErrorHandler,
