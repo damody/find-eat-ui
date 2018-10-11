@@ -29,6 +29,7 @@ import { PageMenuComponent } from './page-menu/page-menu.component';
 import { MainComponent } from './main/main.component';
 import { RestaurantListComponent } from './search-restaurant/restaurant-list/restaurant-list.component';
 import { FoodListComponent } from './search-food/food-list/food-list.component';
+import { TestComponent } from './test/test.component';
 
 
 registerLocaleData(zh);
@@ -52,6 +53,7 @@ const routes: Routes = [
     NewRestaurantComponent,
     RestaurantListComponent,
     FoodListComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
