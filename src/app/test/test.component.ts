@@ -12,33 +12,33 @@ export class TestComponent implements OnInit {
   constructor() { }
   ngOnInit() {
     let nodes_data =  [
-      {"name": "Lillian", "sex": "F"},
-      {"name": "Gordon", "sex": "M"},
-      {"name": "Sylvester", "sex": "M"},
-      {"name": "Mary", "sex": "F"},
-      {"name": "Helen", "sex": "F"},
-      {"name": "Jamie", "sex": "M"},
-      {"name": "Jessie", "sex": "F"},
-      {"name": "Ashton", "sex": "M"},
-      {"name": "Duncan", "sex": "M"},
-      {"name": "Evette", "sex": "F"},
-      {"name": "Mauer", "sex": "M"},
-      {"name": "Fray", "sex": "F"},
-      {"name": "Duke", "sex": "M"},
-      {"name": "Baron", "sex": "M"},
-      {"name": "Infante", "sex": "M"},
-      {"name": "Percy", "sex": "M"},
-      {"name": "Cynthia", "sex": "F"},
-      {"name": "Feyton", "sex": "M"},
-      {"name": "Lesley", "sex": "F"},
-      {"name": "Yvette", "sex": "F"},
-      {"name": "Maria", "sex": "F"},
-      {"name": "Lexy", "sex": "F"},
-      {"name": "Peter", "sex": "M"},
-      {"name": "Ashley", "sex": "F"},
-      {"name": "Finkler", "sex": "M"},
-      {"name": "Damo", "sex": "M"},
-      {"name": "Imogen", "sex": "F"}
+      {"name": "Lillian"},
+      {"name": "Gordon"},
+      {"name": "Sylvester"},
+      {"name": "Mary"},
+      {"name": "Helen"},
+      {"name": "Jamie"},
+      {"name": "Jessie"},
+      {"name": "Ashton"},
+      {"name": "Duncan"},
+      {"name": "Evette"},
+      {"name": "Mauer"},
+      {"name": "Fray"},
+      {"name": "Duke"},
+      {"name": "Baron"},
+      {"name": "Infante"},
+      {"name": "Percy"},
+      {"name": "Cynthia"},
+      {"name": "Feyton"},
+      {"name": "Lesley"},
+      {"name": "Yvette"},
+      {"name": "Maria"},
+      {"name": "Lexy"},
+      {"name": "Peter"},
+      {"name": "Ashley"},
+      {"name": "Finkler"},
+      {"name": "Damo"},
+      {"name": "Imogen"}
     ];
     let links_data = [
       {"source": "Sylvester", "target": "Gordon", "size":2 },
@@ -109,6 +109,7 @@ export class TestComponent implements OnInit {
     let node = node_parent
       .enter()
       .append("circle")
+      .attr("class", "gg")
       .attr("r", 5)
       .attr("fill", "red");
     let node_text = node_parent
@@ -149,8 +150,8 @@ export class TestComponent implements OnInit {
     var drag_handler = d3.drag()
       .on("start", drag_start)
       .on("drag", drag_drag)
-      .on("end", drag_end);	
-    drag_handler(node);
+      .on("end", drag_end);
+    drag_handler(svg.selectAll(".gg"));
   }
 
 }
